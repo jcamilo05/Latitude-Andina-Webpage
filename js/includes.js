@@ -4,11 +4,11 @@
 // ============================================================
 
 const NAV_LINKS = [
-  { href: "../index.html", label: "Inicio", key: "inicio" },
-  { href: "../nosotros/index.html", label: "Nosotros", key: "nosotros" },
-  { href: "../marca/index.html", label: "Tours en Monguí y Boyacá", key: "marca" },
-  { href: "../filosofia-latitude/index.html", label: "Filosofía Latitude Andina", key: "filosofia-latitude" },
-  { href: "../contacto/index.html", label: "Contacto", key: "contacto" },
+  { href: "/index.html", label: "Inicio", key: "inicio" },
+  { href: "/nosotros/index.html", label: "Nosotros", key: "nosotros" },
+  { href: "/marca/index.html", label: "Tours en Monguí y Boyacá", key: "marca" },
+  { href: "/filosofia-latitude/index.html", label: "Filosofía Latitude Andina", key: "filosofia-latitude" },
+  { href: "/contacto/index.html", label: "Contacto", key: "contacto" },
 ];
 
 // Con URLs tipo carpeta (ej. /nosotros/index.html en vez de /nosotros.html),
@@ -35,7 +35,7 @@ function renderNavbar() {
   document.getElementById("navbar-placeholder").innerHTML = `
     <nav class="navbar navbar-expand-lg navbar-la sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="../index.html"><img src="../img/Logo-latitude-andina.png" alt="Latitude Andina" height="60"></a>
+        <a class="navbar-brand" href="/index.html"><img src="../img/Logo-latitude-andina.png" alt="Latitude Andina" height="60"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" ara-label="Abrir menú">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -62,7 +62,7 @@ function renderFooter() {
 
           <div class="col-lg-3 col-12 text-center">  
             <a href="index.html" class="d-inline-block mb-3">
-              <img src="../img/logo-latitude-andina-negativo.png" alt="Latitude Andina" class="footer-logo">
+              <img src="/img/logo-latitude-andina-negativo.png" alt="Latitude Andina" class="footer-logo">
             </a>
             <p class="mb-2" style="opacity:.85;">Experiencias auténticas en Monguí, Boyacá.</p>
             <p class="mb-3" style="opacity:.7; font-size:.85rem;">
