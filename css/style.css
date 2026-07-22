@@ -1,0 +1,1016 @@
+/* =========================================================
+   Latitude Andina — identidad visual
+   Paleta: verde páramo, terracota boyacense, crema cálido
+   Tipografía: serif editorial (display) + sans-serif (cuerpo)
+   ========================================================= */
+
+:root {
+  --color-paramo: #26402f;      /* verde musgo profundo — frailejones/montaña */
+  --color-paramo-light: #3c5c46;
+  --color-terracota: #b5583a;   /* arcilla/tejas de Monguí */
+  --color-terracota-light: #cf7454;
+  --color-crema: #f4efe4;       /* fondo cálido, no blanco puro */
+  --color-crema-dark: #e8dfc9;
+  --color-tinta: #23241f;       /* casi-negro cálido para texto */
+  --color-niebla: #ffffff;
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+
+  --radius: 2px; /* casi sin border-radius: look editorial, no "app" */
+  --radius-btn: 8px;
+}
+
+html { scroll-behavior: smooth; }
+
+html, body {
+  overflow-x: hidden; /* prevents any oversized element from pushing
+                          the page sideways and shifting the fixed navbar */
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-tinta);
+  background-color: var(--color-crema);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, .display-serif {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-paramo);
+}
+
+a { color: var(--color-terracota); }
+a:hover { color: var(--color-paramo); }
+
+/* ---------- Eyebrow / etiqueta de sección ---------- */
+.eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-terracota);
+}
+
+/* ---------- Navbar ---------- */
+.navbar-la {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
+}
+
+.navbar-la.scrolled {
+  background-color: var(--color-paramo);
+  border-bottom-color: rgba(244, 239, 228, 0.2);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+}
+
+.navbar-la .navbar-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--color-crema);
+}
+
+.navbar-la .nav-link {
+  font-weight: 500;
+  color: var(--color-crema);
+  margin-left: 1rem;
+  position: relative;
+}
+.navbar-la .nav-link {
+  font-weight: 500;
+  color: var(--color-tinta);
+  margin-left: 1rem;
+  position: relative;
+}
+
+.navbar-la .nav-link.active,
+.navbar-la .nav-link:hover {
+  color: var(--color-terracota);
+}
+
+.navbar-la .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-terracota);
+}
+
+/* ---------- Navbar en móvil: menú desplegable con fondo sólido ---------- */
+@media (max-width: 991.98px) {
+  .navbar-la .navbar-collapse {
+    background-color: var(--color-paramo);
+    margin-top: 1rem;
+    padding: 1.5rem 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar-la .nav-item {
+    border-bottom: 1px solid rgba(244, 239, 228, 0.12);
+  }
+
+  .navbar-la .nav-item:last-child {
+    border-bottom: none;
+  }
+
+  .navbar-la .nav-link {
+    padding: 0.85rem 0;
+    margin-left: 0;
+  }
+
+  /* Ícono del botón hamburguesa: por defecto es oscuro y
+     casi invisible sobre el nav transparente/foto de fondo */
+  .navbar-la .navbar-toggler {
+    border: none;
+    padding: 0;
+  }
+
+  .navbar-la .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(244,239,228,1)' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+}
+
+/* ---------- Botones ---------- */
+.btn-la-primary {
+  background-color: var(--color-terracota);
+  border: 1px solid var(--color-terracota);
+  color: var(--color-niebla);
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-btn);
+  letter-spacing: 0.02em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn-la-primary:hover {
+  background-color: var(--color-paramo);
+  border-color: var(--color-paramo);
+  color: var(--color-niebla);
+}
+
+.btn-la-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-crema);
+  color: var(--color-crema);
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-btn);
+}
+.btn-la-outline:hover {
+  background-color: var(--color-crema);
+  color: var(--color-paramo);
+}
+
+.btn-la-ghost {
+  background-color: transparent;
+  border: 1px solid var(--color-paramo);
+  color: var(--color-paramo);
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-btn);
+}
+.btn-la-ghost:hover {
+  background-color: var(--color-paramo);
+  color: var(--color-niebla);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  background-size: cover;
+  background-position: center;
+  color: var(--color-niebla);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(35,36,31,0.15) 0%, rgba(35,36,31,0.75) 100%);
+}
+
+.hero-content {
+  position:absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 95px;
+  padding-bottom: 3.5rem;
+}
+
+.hero-content .container{
+  width: 100%;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-content .btn{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-content h1 {
+  color: var(--color-niebla);
+  font-size: clamp(1.9rem, 3.6vw, 3.2rem);
+  max-width: 22ch;
+  line-height: 1.1;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-content p {
+  max-width: 45ch;
+  font-size: 1.15rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Carrusel del hero ---------- */
+.carousel-item.hero {
+  transition-property: opacity;
+}
+
+.hero-indicators {
+  bottom: 2rem;
+  margin-bottom: 0;
+  z-index: 3;
+}
+
+.hero-indicators button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(244, 239, 228, 0.5);
+  margin: 0 5px;
+  opacity: 1;
+}
+
+.hero-indicators button.active {
+  background-color: var(--color-terracota);
+  width: 22px;
+  border-radius: 4px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 4rem;
+  opacity: 1;
+}
+
+.hero-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(244, 239, 228, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-crema);
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.carousel-control-prev:hover .hero-arrow,
+.carousel-control-next:hover .hero-arrow {
+  background-color: var(--color-terracota);
+  border-color: var(--color-terracota);
+}
+
+/* ---------- Encabezado de página interior ---------- */
+.page-header {
+  background-color: var(--color-crema);
+  color: var(--color-paramo);
+  padding: 7.5rem 0 3.5rem;
+  box-shadow: inset 0 1px 0 rgba(244, 239, 228, 0.15); /* faint separating line at the very top */
+}
+
+.page-header.pb-4 {
+  padding-bottom: 1.5rem !important; /* tighter bottom padding on pages
+                                         where content flows directly
+                                         into the next section (Tours) */
+}
+
+.page-header h1 {
+  color: var(--color-paramo);
+}
+
+.page-header p{
+  color: var(--color-tinta);
+  max-width: 90ch;
+  opacity: 0.9;
+}
+.page-header .eyebrow {
+  color: var(--color-terracota-light);
+}
+
+/* ---------- Secciones ---------- */
+.section {
+  padding: 5.5rem 0;
+}
+
+.section-alt {
+  background-color: var(--color-crema-dark);
+}
+
+/* ---------- Tarjetas de experiencias ---------- */
+.card-experiencia {
+  border: none;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: var(--color-niebla);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-experiencia:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 32px rgba(38, 64, 47, 0.18);
+}
+
+.card-experiencia img {
+  height: 260px;
+  object-fit: cover;
+}
+
+.card-experiencia .card-body {
+  padding: 1.75rem;
+}
+
+.card-experiencia .card-title {
+  font-size: 1.25rem;
+}
+
+/* ---------- Tarjetas de experiencias con overlay (estilo original) ---------- */
+
+.card-experiencia-overlay {
+  position: relative;
+  min-height: 520px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card-experiencia-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(35,36,31,0.15) 0%, rgba(35,36,31,0.7) 100%);
+  transition: background 0.3s ease;
+}
+
+.card-experiencia-overlay:hover::before {
+  background: linear-gradient(180deg, rgba(35,36,31,0.35) 0%, rgba(35,36,31,0.8) 100%);
+}
+
+.card-experiencia-overlay-content {
+  position: relative;
+  z-index: 2;
+  color: var(--color-niebla);
+  padding: 1.5rem;
+}
+
+.card-experiencia-overlay-content h3 {
+  color: var(--color-niebla);
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-experiencia-overlay-content p {
+  font-size: 0.95rem;
+  max-width: 32ch;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+/* ---------- Testimonios ---------- */
+.testimonio {
+  background-color: var(--color-niebla);
+  border-left: 3px solid var(--color-terracota);
+  padding: 1.75rem;
+  height: 100%;
+}
+
+.testimonio p {
+  font-style: italic;
+}
+
+.testimonio-autor {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.testimonio-autor img {
+  width: 22px;
+  height: 16px;
+  object-fit: cover;
+}
+
+/* ---------- Carrusel de testimonios ---------- */
+.testimonios-carousel .carousel-item {
+  padding: 0 1rem;
+}
+
+.testimonio-slide {
+  max-width: 640px;
+  background-color: var(--color-niebla);
+  border-left: 3px solid var(--color-terracota);
+  padding: 2.5rem;
+  text-align: left;
+}
+
+.testimonio-slide p {
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.testimonio-slide-autor {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  font-weight: 600;
+}
+
+.testimonio-slide-autor .fi {
+  font-size: 1.4rem;
+  border-radius: 2px;
+}
+
+.testimonios-indicators {
+  position: static;
+  margin-top: 2rem;
+}
+
+.testimonios-indicators button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-crema-dark);
+  margin: 0 5px;
+  opacity: 1;
+}
+
+.testimonios-indicators button.active {
+  background-color: var(--color-terracota);
+  width: 22px;
+  border-radius: 4px;
+}
+
+.testimonios-carousel {
+  padding: 0 3.5rem; /* reserva espacio a los lados para las flechas,
+                         así no quedan encima de las tarjetas */
+}
+
+.testimonios-carousel .carousel-control-prev,
+.testimonios-carousel .carousel-control-next {
+  width: 3.5rem;
+  opacity: 1;
+}
+
+.testimonios-carousel .carousel-control-prev {
+  left: -3.5rem;
+}
+
+.testimonios-carousel .carousel-control-next {
+  right: -3.5rem;
+}
+
+@media (max-width: 767.98px) {
+  .testimonios-carousel {
+    padding: 0 2.75rem;
+  }
+  .testimonios-carousel .carousel-control-prev {
+    left: -2.5rem;
+  }
+  .testimonios-carousel .carousel-control-next {
+    right: -2.5rem;
+  }
+}
+
+.testimonios-carousel .hero-arrow {
+  border-color: var(--color-paramo);
+  color: var(--color-paramo);
+}
+
+.testimonios-carousel .carousel-control-prev:hover .hero-arrow,
+.testimonios-carousel .carousel-control-next:hover .hero-arrow {
+  background-color: var(--color-paramo);
+  border-color: var(--color-paramo);
+  color: var(--color-niebla);
+}
+
+/* ---------- Footer ---------- */
+.footer-la {
+  background-color: var(--color-paramo);
+  color: var(--color-crema);
+  padding: 4rem 0 1.5rem;
+}
+
+.footer-la a {
+  color: var(--color-crema);
+  text-decoration: none;
+}
+
+.footer-la a:hover {
+  color: var(--color-terracota-light);
+}
+
+.footer-la h6 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-crema);
+  margin-bottom: 1.1rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.footer-social-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-niebla);
+  font-size: 1rem;
+}
+
+.footer-social-icon:hover {
+  opacity: 0.85;
+  color: var(--color-niebla);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(244, 239, 228, 0.15);
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  font-size: 0.82rem;
+  color: rgba(244, 239, 228, 0.7);
+}
+
+.footer-logo {
+  max-width: 170px;
+  height: auto;
+}
+
+.footer-map-frame {
+  padding: 6px;
+  background-color: rgba(244, 239, 228, 0.08);
+  border-radius: 10px;
+  line-height: 0;
+}
+
+.footer-map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 280px;
+  border-radius: 6px;
+}
+
+.footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Fixed-size box, centered against the first text line's height.
+   This normalizes the 3 different icon glyphs (envelope, pin, phone)
+   to the same visual anchor, instead of relying on each icon's own
+   uneven bounding box inside the font. */
+.footer-contact-list .footer-icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 1.5rem; /* matches the line-height of the text next to it */
+  flex-shrink: 0;
+}
+
+.footer-contact-list i {
+  color: var(--color-terracota-light);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 991.98px) {
+  .footer-contact-list {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .footer-contact-list li {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .footer-la .row > div {
+    margin-bottom: 1rem;
+  }
+}
+/* ---------- Botón flotante WhatsApp ---------- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+  background-color: #25d366;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.6rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* ---------- Utilidades ---------- */
+.text-terracota { color: var(--color-terracota); }
+.bg-crema-dark { background-color: var(--color-crema-dark); }
+
+@media (max-width: 767px) {
+  .section { padding: 3.5rem 0; }
+  .hero { min-height: 75vh; }
+  .page-header { padding: 5.5rem 0 2.5rem; }
+}
+
+@media (max-width: 575.98px) {
+  .footer-la {
+    padding-top: 3rem;
+  }
+
+  .footer-contact-list a,
+  .footer-contact-list span {
+    word-break: break-word;
+  }
+
+  .footer-contact-list li {
+    text-align: left;
+  }
+
+  .footer-logo {
+    max-width: 140px;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar-la .navbar-toggler {
+    margin-right: 0.25rem;
+  }
+
+  .navbar-la .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/*--------------------Nosotros--------------------------*/
+/* Página Nosotros: cuando la sección de intro es el único contenido
+   antes del CTA, le damos más aire arriba y abajo. */
+.nosotros-intro {
+  padding-top: 0.1rem;
+  padding-bottom: 3.5rem;
+}
+
+/* ---------- Tabs de experiencias (Tours) ---------- */
+.experiencias-tabs {
+  border: none;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.tab-content {
+  padding-bottom: 4rem;
+}
+
+.experiencias-tabs .nav-link {
+  background-color: var(--color-paramo);
+  color: var(--color-crema);
+  border: none;
+  border-radius: 6px;
+  padding: 0.85rem 1.5rem;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.experiencias-tabs .nav-link.active {
+  background-color: var(--color-paramo);
+  color: var(--color-crema);
+  opacity: 1;
+  box-shadow: 0 6px 16px rgba(38, 64, 47, 0.3);
+}
+
+.experiencias-tabs .nav-link:hover:not(.active) {
+  opacity: 0.9;
+}
+
+/* ---------- Tarjeta simple de experiencia (con botón "Ver más") ---------- */
+.card-experiencia-simple {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--color-niebla);
+  box-shadow: 0 6px 20px rgba(35, 36, 31, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-experiencia-simple:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(35, 36, 31, 0.14);
+}
+
+.card-experiencia-simple img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-experiencia-simple .card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-experiencia-simple .card-body p {
+  flex-grow: 1; /* pushes the button below to the bottom of the card,
+                    regardless of how long the description text is */
+}
+
+.card-experiencia-simple .card-title {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-experiencia-simple p {
+  font-size: 0.92rem;
+  opacity: 0.85;
+  text-align: justify;
+}
+
+/*-------Botones de experiencias-----------*/
+
+.btn-la-green {
+  background-color: var(--color-paramo);
+  border: 1px solid var(--color-paramo);
+  color: var(--color-crema);
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-btn, 8px);
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-la-green:hover {
+  background-color: var(--color-paramo-light);
+  color: var(--color-crema);
+}
+
+/*----------Firma a mano ------------------*/
+.firma-nosotros {
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+  line-height: 1.2;
+  color: var(--color-terracota);
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* ---------- Página Filosofía ---------- */
+
+.filosofia-hero {
+  position: relative;
+  min-height: 65vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-niebla);
+  margin-top: 0; /* el nav ya es fixed/transparente, no necesita hueco extra aquí */
+}
+
+.filosofia-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,25,20,0.35) 0%, rgba(20,25,20,0.6) 100%);
+}
+
+.filosofia-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 1.5rem;
+}
+
+.filosofia-hero-content h1 {
+  color: var(--color-niebla);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 1rem;
+}
+
+.filosofia-hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.section-title-underline {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title-underline.text-center{
+  display: block;
+}
+
+.section-title-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-terracota);
+}
+
+h2.section-title-underline.text-center::after {
+  left: 0;
+  right: 0;
+}
+
+/* Cuando el título no está centrado (Territorio, Realidad del Páramo),
+   la línea se alinea a la izquierda en vez de centrada */
+h2.section-title-underline:not(.text-center)::after {
+  margin: 0;
+}
+
+/* ---------- Tarjetas de pilares ---------- */
+.pilar-card {
+  background-color: var(--color-niebla);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(35, 36, 31, 0.08);
+}
+
+.pilar-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.pilar-card-body {
+  padding: 1.75rem;
+  text-align: center;
+}
+
+.pilar-card-body h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.85rem;
+}
+
+.pilar-card-body p {
+  font-size: 0.92rem;
+  text-align: justify;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* ---------- Lista "La Realidad del Páramo de Ocetá" ---------- */
+.realidad-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.realidad-list i {
+  color: var(--color-terracota);
+  font-size: 1.1rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.realidad-list span {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* Página Contacto: la foto vive en el <body> (fixed, cubre toda la
+   página) en vez de solo en el page-header, para que se vea detrás
+   de todas las secciones, como en el sitio original. */
+.contacto-page {
+  background-image: url('../img/contacto-frailejon.jpeg');
+  background-size: cover;
+  background-position: center 10%;
+  background-attachment: fixed;
+  background-color: var(--color-tinta); /* respaldo mientras carga la imagen */
+}
+
+.page-header-photo-overlay {
+  background-color: rgba(244, 239, 228, 0.65);
+  padding-top: 6.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.page-header-photo-overlay h1 {
+  color: var(--color-paramo);
+}
+
+.page-header-photo-overlay .eyebrow {
+  color: var(--color-terracota);
+}
+.page-header-photo-overlay p {
+  color: var(--color-tinta);
+  opacity: 0.95;
+}
+
+/* Las secciones de contenido necesitan su propio fondo semi-transparente
+   para que el texto siga siendo legible sobre la foto de fondo. */
+.contacto-page .section {
+  background-color: rgba(244, 239, 228, 0.65);
+  padding-top: 2rem;
+}
+
+.contacto-page .section h2,
+.contacto-page .section h3 {
+  color: var(--color-paramo);
+}
+
+.contacto-page .section p,
+.contacto-page .section li,
+.contacto-page .section strong {
+  color: var(--color-tinta);
+}
+
+.contacto-page .section .eyebrow {
+  color: var(--color-terracota);
+}
+
+.contacto-page .section a:not(.btn) {
+  color: var(--color-terracota);
+}
+
+.contacto-page .section a:not(.btn):hover {
+  color: var(--color-paramo);
+}
+
+/* Variante de título con línea que ocupa todo el ancho del contenedor,
+   en vez de solo el ancho del texto (usado en Contacto). */
+.underline-full {
+  position: relative;
+  padding-bottom: 1.25rem;
+}
+
+.underline-full::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-terracota);
+}
