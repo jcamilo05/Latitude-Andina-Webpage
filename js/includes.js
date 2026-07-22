@@ -4,32 +4,39 @@
 // ============================================================
 
 const NAV_LINKS = [
-  { href: "index.html", label: "Inicio" },
-  { href: "nosotros.html", label: "Nosotros" },
-  { href: "tours.html", label: "Tours en Monguí y Boyacá" },
-  { href: "filosofia.html", label: "Filosofía Latitude Andina" },
-  { href: "contacto.html", label: "Contacto" },
+  { href: "../index.html", label: "Inicio", key: "inicio" },
+  { href: "../nosotros/index.html", label: "Nosotros", key: "nosotros" },
+  { href: "../marca/index.html", label: "Tours en Monguí y Boyacá", key: "marca" },
+  { href: "../filosofia-latitude/index.html", label: "Filosofía Latitude Andina", key: "filosofia-latitude" },
+  { href: "../contacto/index.html", label: "Contacto", key: "contacto" },
 ];
 
-function currentPage() {
-  const path = window.location.pathname.split("/").pop();
-  return path === "" ? "index.html" : path;
+// Con URLs tipo carpeta (ej. /nosotros/index.html en vez de /nosotros.html),
+// TODOS los archivos se llaman literalmente "index.html" — comparar por
+// nombre de archivo ya no sirve, porque siempre coincidiría. En su lugar,
+// comparamos por el nombre de la CARPETA en la URL actual.
+function currentPageKey() {
+  let path = window.location.pathname;
+  path = path.replace(/index\.html$/, ""); // quita "index.html" del final, si está
+  path = path.replace(/\/$/, "");           // quita la barra final, si queda
+  const segments = path.split("/").filter(Boolean);
+  return segments.length ? segments[segments.length - 1] : "inicio";
 }
 
 function renderNavbar() {
-  const active = currentPage();
+  const active = currentPageKey();
   const links = NAV_LINKS.map(
     (link) => `
       <li class="nav-item">
-        <a class="nav-link ${link.href === active ? "active" : ""}" href="${link.href}">${link.label}</a>
+        <a class="nav-link ${link.key === active ? "active" : ""}" href="${link.href}">${link.label}</a>
       </li>`
   ).join("");
 
   document.getElementById("navbar-placeholder").innerHTML = `
     <nav class="navbar navbar-expand-lg navbar-la sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="img/Logo-latitude-andina.png" alt="Latitude Andina" height="60"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Abrir menú">
+        <a class="navbar-brand" href="../index.html"><img src="../img/Logo-latitude-andina.png" alt="Latitude Andina" height="60"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" ara-label="Abrir menú">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navMenu">
@@ -55,7 +62,7 @@ function renderFooter() {
 
           <div class="col-lg-3 col-12 text-center">  
             <a href="index.html" class="d-inline-block mb-3">
-              <img src="img/Logo-latitude-andina-negativo.png" alt="Latitude Andina" class="footer-logo">
+              <img src="../img/logo-latitude-andina-negativo.png" alt="Latitude Andina" class="footer-logo">
             </a>
             <p class="mb-2" style="opacity:.85;">Experiencias auténticas en Monguí, Boyacá.</p>
             <p class="mb-3" style="opacity:.7; font-size:.85rem;">
