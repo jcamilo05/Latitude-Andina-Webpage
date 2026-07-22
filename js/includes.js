@@ -61,7 +61,7 @@ function renderFooter() {
         <div class="row g-4 align-items-start">
 
           <div class="col-lg-3 col-12 text-center">  
-            <a href="index.html" class="d-inline-block mb-3">
+            <a href="/index.html" class="d-inline-block mb-3">
               <img src="/img/logo-latitude-andina-negativo.png" alt="Latitude Andina" class="footer-logo">
             </a>
             <p class="mb-2" style="opacity:.85;">Experiencias auténticas en Monguí, Boyacá.</p>
