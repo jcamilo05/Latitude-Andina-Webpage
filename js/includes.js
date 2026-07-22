@@ -35,7 +35,7 @@ function renderNavbar() {
   document.getElementById("navbar-placeholder").innerHTML = `
     <nav class="navbar navbar-expand-lg navbar-la sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="/index.html"><img src="../img/Logo-latitude-andina.png" alt="Latitude Andina" height="60"></a>
+        <a class="navbar-brand" href="/index.html"><img src="/img/Logo-latitude-andina.png" alt="Latitude Andina" height="60"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" ara-label="Abrir menú">
           <span class="navbar-toggler-icon"></span>
         </button>
