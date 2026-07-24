@@ -17,21 +17,6 @@
   --font-display: "Fraunces", "Georgia", serif;
   --font-body: "Inter", -apple-system, sans-serif;
 
-  /* ---------- Escala tipográfica unificada ----------
-     Antes había valores casi-duplicados sueltos por todo el archivo
-     (0.82/0.85, 0.9/0.92/0.95, 1.1/1.15) fruto de ir agregando
-     componentes en momentos distintos. Ahora todo el tamaño de letra
-     del sitio sale de esta escala, así que cambiar un tamaño se hace
-     en un solo lugar y no hay dos textos "casi iguales" por accidente. */
-  --fs-2xs: 0.75rem;   /* eyebrows, etiquetas en mayúscula */
-  --fs-xs: 0.85rem;    /* texto legal, íconos pequeños */
-  --fs-sm: 0.95rem;    /* copy de tarjetas/listas (antes 0.9–0.95rem) */
-  --fs-base: 1.05rem;  /* párrafo por defecto del sitio */
-  --fs-md: 1.15rem;    /* subtítulos de tarjeta, texto destacado */
-  --fs-lg: 1.25rem;    /* títulos de tarjeta */
-  --fs-xl: 1.5rem;     /* títulos grandes dentro de overlays */
-  --fs-2xl: 1.6rem;    /* acentos puntuales (ícono flotante, etc.) */
-
   --radius: 2px; /* casi sin border-radius: look editorial, no "app" */
   --radius-btn: 8px;
 }
@@ -39,8 +24,6 @@
 html { scroll-behavior: smooth; }
 
 html, body {
-  margin: 0;
-  padding: 0;
   overflow-x: hidden; /* prevents any oversized element from pushing
                           the page sideways and shifting the fixed navbar */
   max-width: 100%;
@@ -50,7 +33,7 @@ body {
   font-family: var(--font-body);
   color: var(--color-tinta);
   background-color: var(--color-crema);
-  font-size: var(--fs-base);
+  font-size: 1.05rem;
   line-height: 1.65;
 }
 
@@ -69,7 +52,7 @@ a:hover { color: var(--color-paramo); }
   font-family: var(--font-body);
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: var(--fs-2xs);
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--color-terracota);
 }
@@ -106,6 +89,12 @@ a:hover { color: var(--color-paramo); }
 .navbar-la .nav-link {
   font-weight: 500;
   color: var(--color-crema);
+  margin-left: 1rem;
+  position: relative;
+}
+.navbar-la .nav-link {
+  font-weight: 500;
+  color: var(--color-tinta);
   margin-left: 1rem;
   position: relative;
 }
@@ -254,7 +243,7 @@ a:hover { color: var(--color-paramo); }
 
 .hero-content p {
   max-width: 45ch;
-  font-size: var(--fs-md);
+  font-size: 1.15rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -301,7 +290,7 @@ a:hover { color: var(--color-paramo); }
   align-items: center;
   justify-content: center;
   color: var(--color-crema);
-  font-size: var(--fs-sm);
+  font-size: 0.9rem;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -333,6 +322,7 @@ a:hover { color: var(--color-paramo); }
   color: var(--color-tinta);
   max-width: 90ch;
   opacity: 0.9;
+  max-width: none;
 }
 .page-header .eyebrow {
   color: var(--color-terracota-light);
@@ -371,7 +361,7 @@ a:hover { color: var(--color-paramo); }
 }
 
 .card-experiencia .card-title {
-  font-size: var(--fs-lg);
+  font-size: 1.25rem;
 }
 
 /* ---------- Tarjetas de experiencias con overlay (estilo original) ---------- */
@@ -409,12 +399,12 @@ a:hover { color: var(--color-paramo); }
 
 .card-experiencia-overlay-content h3 {
   color: var(--color-niebla);
-  font-size: var(--fs-xl);
+  font-size: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
 .card-experiencia-overlay-content p {
-  font-size: var(--fs-sm);
+  font-size: 0.95rem;
   max-width: 32ch;
   margin: 0 auto;
   opacity: 0.95;
@@ -438,7 +428,7 @@ a:hover { color: var(--color-paramo); }
   gap: 0.6rem;
   margin-top: 1rem;
   font-weight: 600;
-  font-size: var(--fs-sm);
+  font-size: 0.9rem;
 }
 
 .testimonio-autor img {
@@ -462,7 +452,7 @@ a:hover { color: var(--color-paramo); }
 
 .testimonio-slide p {
   font-style: italic;
-  font-size: var(--fs-md);
+  font-size: 1.15rem;
   line-height: 1.6;
 }
 
@@ -563,7 +553,7 @@ a:hover { color: var(--color-paramo); }
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: var(--fs-md);
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--color-crema);
   margin-bottom: 1.1rem;
@@ -595,7 +585,7 @@ a:hover { color: var(--color-paramo); }
   border-top: 1px solid rgba(244, 239, 228, 0.15);
   margin-top: 3rem;
   padding-top: 1.5rem;
-  font-size: var(--fs-xs);
+  font-size: 0.82rem;
   color: rgba(244, 239, 228, 0.7);
 }
 
@@ -640,7 +630,7 @@ a:hover { color: var(--color-paramo); }
 
 .footer-contact-list i {
   color: var(--color-terracota-light);
-  font-size: var(--fs-xs);
+  font-size: 0.85rem;
 }
 
 @media (max-width: 991.98px) {
@@ -673,7 +663,7 @@ a:hover { color: var(--color-paramo); }
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: var(--fs-2xl);
+  font-size: 1.6rem;
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
   text-decoration: none;
 }
@@ -790,12 +780,12 @@ a:hover { color: var(--color-paramo); }
 }
 
 .card-experiencia-simple .card-title {
-  font-size: var(--fs-md);
+  font-size: 1.15rem;
   margin-bottom: 0.75rem;
 }
 
 .card-experiencia-simple p {
-  font-size: var(--fs-sm);
+  font-size: 0.92rem;
   opacity: 0.85;
   text-align: justify;
 }
@@ -809,7 +799,7 @@ a:hover { color: var(--color-paramo); }
   font-weight: 600;
   padding: 0.5rem 1.25rem;
   border-radius: var(--radius-btn, 8px);
-  font-size: var(--fs-sm);
+  font-size: 0.9rem;
   transition: background-color 0.2s ease;
 }
 
@@ -864,7 +854,7 @@ a:hover { color: var(--color-paramo); }
 }
 
 .filosofia-hero-content p {
-  font-size: var(--fs-md);
+  font-size: 1.1rem;
   opacity: 0.95;
 }
 
@@ -918,12 +908,12 @@ h2.section-title-underline:not(.text-center)::after {
 }
 
 .pilar-card-body h3 {
-  font-size: var(--fs-lg);
+  font-size: 1.25rem;
   margin-bottom: 0.85rem;
 }
 
 .pilar-card-body p {
-  font-size: var(--fs-sm);
+  font-size: 0.92rem;
   text-align: justify;
   opacity: 0.85;
   margin: 0;
@@ -939,13 +929,13 @@ h2.section-title-underline:not(.text-center)::after {
 
 .realidad-list i {
   color: var(--color-terracota);
-  font-size: var(--fs-md);
+  font-size: 1.1rem;
   margin-top: 0.2rem;
   flex-shrink: 0;
 }
 
 .realidad-list span {
-  font-size: var(--fs-sm);
+  font-size: 0.95rem;
   line-height: 1.55;
 }
 
@@ -1028,7 +1018,7 @@ h2.section-title-underline:not(.text-center)::after {
 }
 
 /* ---------- Página Páramo de Ocetá / Laguna Negra ---------- */
-
+ 
 /* Carrusel de 3 fotos junto al texto de intro.
    max-height evita que crezca demasiado en pantallas anchas o
    cuando la columna de texto de al lado es muy alta. */
@@ -1038,17 +1028,17 @@ h2.section-title-underline:not(.text-center)::after {
   box-shadow: 0 18px 40px rgba(35, 36, 31, 0.18);
   max-height: 620px;
 }
-
+ 
 .tour-photo-carousel .carousel-item img {
   aspect-ratio: 4 / 5;
   object-fit: cover;
 }
-
+ 
 .tour-photo-carousel-indicators {
   bottom: 1rem;
   margin-bottom: 0;
 }
-
+ 
 .tour-photo-carousel-indicators button {
   width: 7px;
   height: 7px;
@@ -1058,24 +1048,24 @@ h2.section-title-underline:not(.text-center)::after {
   margin: 0 4px;
   opacity: 1;
 }
-
+ 
 .tour-photo-carousel-indicators button.active {
   background-color: var(--color-terracota);
   width: 18px;
   border-radius: 4px;
 }
-
+ 
 .tour-photo-carousel .carousel-control-prev,
 .tour-photo-carousel .carousel-control-next {
   width: 3rem;
 }
-
+ 
 .hero-arrow-sm {
   width: 32px;
   height: 32px;
-  font-size: var(--fs-2xs);
+  font-size: 0.75rem;
 }
-
+ 
 /* Tarjetas "Caminata Larga" / "Caminata Corta" */
 .tour-option-card {
   background-color: var(--color-niebla);
@@ -1083,31 +1073,31 @@ h2.section-title-underline:not(.text-center)::after {
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(35, 36, 31, 0.1);
 }
-
+ 
 .tour-option-card-header {
   background-color: var(--color-paramo);
   padding: 1.1rem 1.75rem;
 }
-
+ 
 .tour-option-card-header h3 {
   color: var(--color-terracota-light);
-  font-size: var(--fs-md);
+  font-size: 1.15rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin: 0;
   text-align: center;
 }
-
+ 
 .tour-option-card-body {
   padding: 1.75rem;
 }
-
+ 
 .tour-stat-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
+ 
 .tour-stat-list li {
   display: flex;
   align-items: center;
@@ -1115,23 +1105,23 @@ h2.section-title-underline:not(.text-center)::after {
   padding: 0.7rem 0;
   border-bottom: 1px solid rgba(35, 36, 31, 0.08);
 }
-
+ 
 .tour-stat-list li:last-child {
   border-bottom: none;
 }
-
+ 
 .tour-stat-list i {
   color: var(--color-terracota);
-  font-size: var(--fs-base);
+  font-size: 1.05rem;
   width: 22px;
   text-align: center;
   flex-shrink: 0;
 }
-
+ 
 .tour-stat-list span {
-  font-size: var(--fs-sm);
+  font-size: 0.95rem;
 }
-
+ 
 /* Información compartida entre las dos caminatas */
 .tour-info-item {
   display: flex;
@@ -1139,20 +1129,20 @@ h2.section-title-underline:not(.text-center)::after {
   gap: 1rem;
   height: 100%;
 }
-
+ 
 .tour-info-item i {
   color: var(--color-terracota);
   font-size: 1.3rem;
   margin-top: 0.2rem;
   flex-shrink: 0;
 }
-
+ 
 .tour-info-item p {
   margin: 0;
-  font-size: var(--fs-sm);
+  font-size: 0.95rem;
   line-height: 1.55;
 }
-
+ 
 /* ---------- Consistencia tipográfica en la página de tour ---------- */
 /* Mismo tamaño de letra y texto justificado en todos los párrafos
    de la página (encabezado, intro, filas de íconos, tarjetas).
@@ -1162,31 +1152,31 @@ h2.section-title-underline:not(.text-center)::after {
 .tour-page .tour-info-item p,
 .tour-page .tour-stat-list span {
   font-family: var(--font-body);
-  font-size: var(--fs-sm);
+  font-size: 0.95rem;
   line-height: 1.6;
   text-align: justify;
   text-justify: inter-word;
 }
-
+ 
 /* Las filas de íconos son de una sola línea corta: se dejan
    alineadas a la izquierda para que no se vean "estiradas" */
 .tour-page .tour-info-item p,
 .tour-page .tour-stat-list span {
   text-align: left;
 }
-
+ 
 /* Sección justo debajo de un page-header: menos aire arriba
    para que no quede tanto espacio vacío entre título y contenido */
 .section-tight-top {
   padding-top: 2rem;
 }
-
+ 
 @media (max-width: 767.98px) {
   .section-tight-top {
     padding-top: 1.5rem;
   }
 }
-
+ 
 /* Carrusel de la intro estirado a la altura completa de la fila,
    para igualar la altura de la columna de texto de al lado. */
 .tour-photo-carousel .carousel-item.h-100 img {
@@ -1196,20 +1186,20 @@ h2.section-title-underline:not(.text-center)::after {
   max-height: 620px;
   object-fit: cover;
 }
-
+ 
 @media (max-width: 991.98px) {
   .tour-photo-carousel,
   .tour-photo-carousel .carousel-item.h-100 img {
     max-height: 480px;
   }
 }
-
+ 
 /* Variante compacta de .tour-info-item para las dos filas que
    acompañan la foto en la sección de intro */
 .tour-info-item-compact {
   gap: 0.75rem;
 }
-
+ 
 .tour-info-item-compact i {
-  font-size: var(--fs-md);
+  font-size: 1.1rem;
 }
