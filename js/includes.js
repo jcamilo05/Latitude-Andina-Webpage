@@ -70,7 +70,7 @@ function renderFooter() {
             </p>
 
             <div class="footer-social">
-              <a href="https://www.instagram.com/latitudeandina" target="_blank" rel="noopener" class="footer-social-icon" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);" aria-label="Instagram">
+              <a href="https://www.instagram.com/latitudeandinatours?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="footer-social-icon" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);" aria-label="Instagram">
                 <i class="fa-brands fa-instagram"></i>
               </a>
               <a href="https://wa.me/573204881690" target="_blank" rel="noopener" class="footer-social-icon" style="background-color:#25d366;" aria-label="WhatsApp">
