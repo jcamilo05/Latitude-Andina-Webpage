@@ -17,7 +17,7 @@
   --font-display: "Fraunces", "Georgia", serif;
   --font-body: "Inter", -apple-system, sans-serif;
 
-  /* ---------- Escala tipográfica unificada ----------
+  /* ---------- Escala tipográfica unificada ---------- */
 
   --fs-2xs: 0.75rem;   /* eyebrows, etiquetas en mayúscula */
   --fs-xs: 0.85rem;    /* texto legal, íconos pequeños */
@@ -305,6 +305,83 @@ a:hover { color: var(--color-paramo); }
 .carousel-control-next:hover .hero-arrow {
   background-color: var(--color-terracota);
   border-color: var(--color-terracota);
+}
+
+/* ---------- Insignia de idiomas (hero) ---------- */
+.hero-lang-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(244, 239, 228, 0.15);
+  border: 1px solid rgba(244, 239, 228, 0.5);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  color: var(--color-crema);
+}
+
+.hero-lang-badge .fi {
+  border-radius: 2px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 767.98px) {
+  .hero-lang-badge {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.85rem;
+  }
+}
+
+/* ---------- Sección Idiomas (diferencial trilingüe) ---------- */
+.lang-section {
+  background-color: var(--color-paramo);
+}
+
+.lang-section .eyebrow {
+  color: var(--color-terracota-light);
+}
+
+.lang-section h2 {
+  color: var(--color-crema);
+}
+
+.lang-section-text {
+  color: var(--color-crema);
+  opacity: 0.92;
+  font-size: var(--fs-base);
+}
+
+.lang-section-text strong {
+  color: var(--color-terracota-light);
+}
+
+.lang-chips {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.lang-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(244, 239, 228, 0.1);
+  border: 1px solid rgba(244, 239, 228, 0.35);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  color: var(--color-crema);
+}
+
+.lang-chip .fi {
+  border-radius: 2px;
+  font-size: 1.1rem;
 }
 
 /* ---------- Encabezado de página interior ---------- */
