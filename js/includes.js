@@ -11,7 +11,6 @@ const NAV_LINKS = [
   { href: "/contacto/index.html", label: "Contacto", key: "contacto" },
 ];
 
-// Con URLs tipo carpeta (ej. /nosotros/index.html en vez de /nosotros.html),
 // TODOS los archivos se llaman literalmente "index.html" — comparar por
 // nombre de archivo ya no sirve, porque siempre coincidiría. En su lugar,
 // comparamos por el nombre de la CARPETA en la URL actual.
@@ -54,13 +53,30 @@ function renderNavbar() {
   `;
 }
 
+// insertar insignia de agencia trilingue en Monguí Boyacá
+
+function renderLangBadge(){
+  const badgeHTML = `
+  <p class="mb-3">
+    <span class="hero-lang-badge">
+        <span class="fi fi-es"></span><span class="fi fi-gb"></span><span class="fi fi-fr"></span>
+        Única agencia trilingüe en Monguí
+      </span>
+    </p>`;
+
+   document.querySelectorAll("#heroCarousel .hero-content .container").forEach((container) => {
+    container.insertAdjacentHTML("afterbegin", badgeHTML);
+  });
+
+}
+
 function renderFooter() {
   document.getElementById("footer-placeholder").innerHTML = `
     <footer class="footer-la">
       <div class="container">
         <div class="row g-4 align-items-start">
 
-          <div class="col-lg-3 col-12 text-center">  
+          <div class="col-lg col-md-6 col-12 text-center">  
             <a href="/index.html" class="d-inline-block mb-3">
               <img src="/img/logo-latitude-andina-negativo.png" alt="Latitude Andina" class="footer-logo">
             </a>
@@ -83,14 +99,14 @@ function renderFooter() {
             </div>
           </div>
 
-          <div class="col-lg-3 col-12 text-center text-lg-center">
+          <div class="col-lg col-md-6 col-12 text-center text-lg-center">
             <h6>Explora</h6> 
             <ul class="list-unstyled">
               ${NAV_LINKS.map((l) => `<li class="mb-2"><a href="${l.href}">${l.label}</a></li>`).join("")}
             </ul>
           </div>
 
-          <div class="col-lg-3 col-12 text-center text-lg-center">
+          <div class="col-lg col-md-6 col-12 text-center text-lg-center">
             <h6>Contacto</h6> 
              <ul class="list-unstyled footer-contact-list" style="opacity:.9;">
               <li class="mb-2"><span class="footer-icon-box"><i class="fa-regular fa-envelope"></i></span><a href="mailto:latitudeandina@gmail.com">latitudeandina@gmail.com</a></li>
@@ -98,8 +114,18 @@ function renderFooter() {
               <li class="mb-2"><span class="footer-icon-box"><i class="fa-solid fa-phone"></i></span><a href="https://wa.me/573204881690" target="_blank" rel="noopener">+57 320 488 1690</a></li>
             </ul>
           </div>
+
+          <div class="col-lg col-md-6 col-12 text-center text-lg-center">
+            <h6><span class="fi fi-gb me-1"></span><span class="fi fi-fr me-1"></span>Idiomas</h6>
+            <p class="mb-3" style="opacity:.85; font-size:.9rem;">
+              Si eres francófono o anglófono y no hablas español, no te preocupes. Somos la única agencia de turismo local en Monguí trilingüe, con habilidades en inglés y francés nativo para organizar tus experiencias de la manera más eficiente y al menor costo posible.
+            </p>
+            <a href="https://wa.me/573204881690" target="_blank" rel="noopener" class="fw-semibold">
+              <i class="fa-brands fa-whatsapp me-1"></i>¡Contáctanos!
+            </a>
+          </div>
            
-          <div class="col-lg-3">
+          <div class="col-lg col-md-6 col-12">
             <div class="footer-map-frame">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.927937502337!2d-72.85356832635536!3d5.723520331945208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a49e6321cd023%3A0xf0c710602334d92f!2sLatitude%20Andina%20Tours!5e0!3m2!1sen!2sco!4v1771110362068!5m2!1sen!2sco"
@@ -128,9 +154,11 @@ function renderFooter() {
   `;
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
   renderNavbar();
   renderFooter();
+  renderLangBadge();
 
   // Navbar transparente → sólida al hacer scroll.
   // Solo tiene sentido el estado "transparente" en páginas con hero/carrusel
