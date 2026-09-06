@@ -92,9 +92,12 @@ function renderFooter() {
               <a href="https://wa.me/573204881690" target="_blank" rel="noopener" class="footer-social-icon" style="background-color:#25d366;" aria-label="WhatsApp">
                 <i class="fa-brands fa-whatsapp"></i>
               </a>
-              <a href="https://www.booking.com/searchresults.es.html?aid=311839&label=celavi-hostel-Cu8ApLTlXeJGiW4bM9bXagS704403890337%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-2161282227481%3Alp20205%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YavywThF4buZaN3e9Rle2iM&gclid=Cj0KCQjw6_HSBhCpARIsANvVltaJ6W_ownHSGOq6mdYivgipGQ6W2vFFoTdorEyOQGFMHOYLIxDyOEYaAubKEALw_wcB&redirected=1&city=-592708&highlighted_hotels=9603326&hlrd=no_dates&source=hotel&expand_sb=1&keep_landing=1&sid=dbbbf2661fd3c96939ea9087bd5652cd" 
+              <a href="https://www.booking.com/searchresults.es.html?aid=311839&label=celavi-hostel-Cu8ApLTlXeJGiW4bM9bXagS704403890337%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-2161282227481%3Alp20205%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YavywThF4buZaN3e9Rle2iM&gclid=Cj0KCQjw6_HSBhCpARIsANvVltaJ6W_ownHSGOq6mdYivgipGQ6W2vFFoTdorEyOQGFMHOYLIxDyOEYaAubKEALw_wcB&redirected=1&city=-592708&highlighted_hotels=9603326&hlrd=no_dates&source=hotel&expand_sb=1&keep_landing=1&sid=dbbbf2661fd3c96939ea9087bd5652cd"
                 target="_blank" rel="noopener" class="footer-social-icon" style="background-color:#003580; font-family:var(--font-display); font-weight:700;" aria-label="Booking">
                 B.
+              </a>
+              <a href="https://maps.app.goo.gl/4L6yU4HmrsQdxNRt7" target="_blank" rel="noopener" class="footer-social-icon" style="background-color:#4285F4;" aria-label="Google Maps">
+                <i class="fa-solid fa-map-location-dot"></i>
               </a>
             </div>
           </div>
