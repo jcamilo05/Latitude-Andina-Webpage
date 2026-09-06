@@ -846,9 +846,17 @@ a:hover { color: var(--color-paramo); }
   box-shadow: 0 14px 28px rgba(35, 36, 31, 0.14);
 }
 
-.card-experiencia-simple img {
-  height: 220px;
+.card-experiencia-simple .card-img-wrap {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  flex: none;
+}
+
+.card-experiencia-simple .card-img-wrap img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .card-experiencia-simple .card-body {
