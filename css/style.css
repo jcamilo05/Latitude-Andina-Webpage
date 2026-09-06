@@ -1027,7 +1027,7 @@ h2.section-title-underline:not(.text-center)::after {
    página) en vez de solo en el page-header, para que se vea detrás
    de todas las secciones, como en el sitio original. */
 .contacto-page {
-  background-image: url('/img/contacto-frailejon.jpeg');
+  background-image: url('/img/contacto-frailejon.webp');
   background-size: cover;
   background-position: center 10%;
   background-attachment: fixed;
