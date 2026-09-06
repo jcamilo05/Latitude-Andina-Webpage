@@ -239,7 +239,8 @@ a:hover { color: var(--color-paramo); }
   margin-right: auto;
 }
 
-.hero-content h1 {
+.hero-content h1,
+.hero-content h2 {
   color: var(--color-niebla);
   font-size: clamp(1.9rem, 3.6vw, 3.2rem);
   max-width: 22ch;
